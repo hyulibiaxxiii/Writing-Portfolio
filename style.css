@@ -165,3 +165,12 @@ body { animation: fadePage 0.6s ease; }
 /* ---------- SIGNATURE ---------- */
 .signature { font-size:0.8rem; opacity:0.5; display:block; margin-top:10px; }
 .signature:hover { opacity:1; }
+
+.story-text {
+    white-space: pre-wrap;
+    font-family: 'Quicksand', sans-serif;
+    line-height: 1.8;
+    font-size: 1.05rem;
+    background: none;
+    border: none;
+}
