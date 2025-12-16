@@ -1,0 +1,167 @@
+/* ---------- BASE ---------- */
+body {
+    margin: 0;
+    padding: 0;
+    background: #f7f5f9; /* soft beige */
+    font-family: 'Quicksand', sans-serif;
+    color: #655b7c; /* dusty lavender text */
+    transition: background 0.4s ease, color 0.4s ease;
+    cursor: url('images/sparkle.png'), auto; /* sparkly cursor */
+}
+
+/* ---------- DARK MODE ---------- */
+body.dark {
+    background: #1a1625;
+    color: #dcd5ff;
+}
+body.dark #navbar { 
+    background: #2a2437; 
+    box-shadow: 0 2px 6px rgba(0,0,0,0.5); 
+}
+body.dark .card, 
+body.dark .piece, 
+body.dark .modal-content { 
+    background: #2f2940; 
+    color: #eae4ff; 
+}
+
+/* ---------- NAVBAR ---------- */
+#navbar {
+    background: #e7e0ff;
+    padding: 15px;
+    text-align: center;
+    position: sticky;
+    top: 0;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+    z-index: 10;
+}
+#navbar a { 
+    color: #6f62a4; 
+    text-decoration: none; 
+    font-weight: 600; 
+    margin: 0 20px; 
+    transition: 0.25s ease; 
+}
+#navbar a:hover { color: #a291ff; }
+#darkToggle { 
+    background: none; 
+    border: none; 
+    font-size: 18px; 
+    cursor: pointer; 
+    margin-left: 15px; 
+}
+
+/* ---------- HEADER ---------- */
+.hero { text-align: center; padding: 60px 20px; }
+.typing {
+    font-family: 'Dancing Script', cursive; /* cute handwritten */
+    font-size: 2.6rem;
+    font-weight: 600;
+    border-right: 3px solid #b9a8ff;
+    white-space: nowrap;
+    overflow: hidden;
+    width: 0;
+    animation: typing 3s steps(30) forwards, blink 0.8s infinite;
+}
+@keyframes typing { from { width: 0; } to { width: 100%; } }
+@keyframes blink { 50% { border-color: transparent; } }
+
+.fade2 { opacity: 0; animation: fadeIn 2s ease forwards; }
+@keyframes fadeIn { from {opacity:0; transform:translateY(8px);} to {opacity:1; transform:translateY(0);} }
+
+/* ---------- STARS ---------- */
+.stars, .stars2 { 
+    position: fixed; 
+    width: 100%; 
+    height: 100%; 
+    top:0; left:0; 
+    pointer-events: none; 
+    background: transparent url('images/stars.png') repeat; 
+    animation: starFloat 30s linear infinite; 
+    opacity: 0.18; 
+}
+.stars2 { animation-duration: 60s; opacity:0.1; }
+@keyframes starFloat { from {background-position:0 0;} to {background-position:-1000px 1000px;} }
+
+/* ---------- FLOATING CLOUD ---------- */
+.cloud {
+    position: fixed;
+    top: 5%;
+    left: -150px;
+    width: 120px;
+    opacity: 0.35;
+    pointer-events: none;
+    animation: cloudMove 60s linear infinite;
+}
+@keyframes cloudMove { 0% {transform:translateX(0);} 100% {transform:translateX(120vw);} }
+
+/* ---------- FEATURED CARD ---------- */
+.featured { text-align: center; margin: 40px auto; }
+.card { 
+    background: #fff3f8; 
+    width: 60%; 
+    margin: 0 auto; 
+    padding: 25px; 
+    border-radius: 20px; 
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08); 
+    transition: transform 0.3s ease; 
+}
+.card:hover { transform: translateY(-4px); }
+
+/* ---------- BUTTONS ---------- */
+button { 
+    background: #d9d1ff; 
+    border: none; 
+    padding: 10px 25px; 
+    border-radius: 20px; 
+    font-weight: 600; 
+    color: #4c3f6f; 
+    cursor: pointer; 
+    transition: 0.25s ease; 
+}
+button:hover { 
+    background: #b9a8ff; 
+    transform: scale(1.05); 
+}
+
+/* ---------- WRITING GRID ---------- */
+.writing-grid { text-align: center; width: 80%; margin: 40px auto; }
+.piece { 
+    background: #fff3f8; 
+    padding: 20px; 
+    margin: 20px auto; 
+    border-radius: 18px; 
+    width: 70%; 
+    box-shadow:0 3px 10px rgba(0,0,0,0.06); 
+    transition: 0.25s ease; 
+}
+.piece:hover { transform: translateY(-4px); }
+
+/* ---------- ABOUT ---------- */
+.about { text-align: center; padding: 40px; }
+.about img { 
+    width:150px; 
+    border-radius:50%; 
+    margin-bottom:20px; 
+    box-shadow:0 3px 10px rgba(0,0,0,0.1); 
+}
+
+/* ---------- STORY PAGE ---------- */
+.story { width:70%; margin:60px auto; line-height:1.7; font-size:1.1rem; }
+
+/* ---------- MODAL ---------- */
+.modal { display:none; position: fixed; z-index:20; left:0; top:0; width:100%; height:100%; background: rgba(0,0,0,0.35); }
+.modal-content { background:#fff3f8; margin:12% auto; padding:20px; width:60%; border-radius:20px; box-shadow:0 5px 14px rgba(0,0,0,0.1); }
+.close { float:right; font-size:28px; cursor:pointer; }
+
+/* ---------- SECRET ---------- */
+.secret { padding: 80px 40px; text-align:center; font-size:1.2rem; }
+
+/* ---------- PAGE TRANSITIONS ---------- */
+html { scroll-behavior: smooth; }
+body { animation: fadePage 0.6s ease; }
+@keyframes fadePage { from {opacity:0;} to {opacity:1;} }
+
+/* ---------- SIGNATURE ---------- */
+.signature { font-size:0.8rem; opacity:0.5; display:block; margin-top:10px; }
+.signature:hover { opacity:1; }
