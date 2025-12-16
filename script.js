@@ -8,7 +8,7 @@ toggle.onclick = function () {
 // Password Gate for Secret Page
 function passwordGate() {
     const pass = prompt("Enter password:");
-    if (pass === "hyulibiaxviii<3") {
+    if (pass === "hyulibiaxxiii<3") {
         window.location.href = "secret.html";
     } else {
         alert("Incorrect password. Try again!");
